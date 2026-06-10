@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+
+  --neon-yellow:  #FFE600;
+  --neon-red:     #FF003C;
+  --neon-blue:    #00C3FF;
+  --neon-green:   #00FF88;
+  --neon-purple:  #CC00FF;
+
+  /* Nowe zaokrąglone czcionki */
+  --font-display: 'Nunito', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* Neonowy tekst — miększy blask */
+.neon-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-shadow:
+    0 0 10px currentColor,
+    0 0 25px currentColor,
+    0 0 50px currentColor;
+}
+
+/* Neonowy przycisk — zaokrąglony i przyjazny */
+.neon-button {
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  color: var(--neon-blue);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.65rem 1.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.neon-button:hover {
+  box-shadow:
+    0 0 10px currentColor,
+    0 0 25px currentColor,
+    inset 0 0 10px rgba(0, 195, 255, 0.08);
+  transform: scale(1.03);
+}
+
+.neon-button:active {
+  transform: scale(0.97);
+}
+
+/* Neonowy input — zaokrąglony */
+.neon-input {
+  background: rgba(255,255,255,0.04);
+  border: 2px solid rgba(0, 195, 255, 0.3);
+  border-radius: 999px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.neon-input:focus {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 12px rgba(0, 195, 255, 0.3);
+}
+
+.neon-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Select zaokrąglony */
+select.neon-input {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 2rem;
+}
+
+/* Neonowy styl suwaka */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255,255,255,0.1);
+  height: 4px;
+  border-radius: 999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: currentColor;
+  border: 2px solid currentColor;
+  box-shadow: 0 0 12px currentColor;
+  cursor: pointer;
+}
